@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Product Updates - Real-time</h2>
+
+  <div class="add-product">
+    <h3>Add New Product</h3>
+    <input [(ngModel)]="newProduct.name" placeholder="Name" />
+    <input [(ngModel)]="newProduct.price" type="number" placeholder="Price" />
+    <input [(ngModel)]="newProduct.description" placeholder="Description" />
+    <button (click)="addProduct()">Add Product</button>
+  </div>
+
+  <div class="product-list">
+    <h3>Products</h3>
+    <div *ngFor="let product of products" class="product-item">
+      <h4>{{ product.name }}</h4>
+      <p>Price: ${{ product.price }}</p>
+      <p>{{ product.description }}</p>
+      <p>Last Updated: {{ product.lastUpdated | date:'short' }}</p>
+      <button (click)="deleteProduct(product.id)">Delete</button>
+    </div>
+  </div>
+</div>

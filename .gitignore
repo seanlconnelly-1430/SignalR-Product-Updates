@@ -1,0 +1,17 @@
+# .NET
+**/bin/
+**/obj/
+**/.vs/
+*.user
+*.suo
+*.cache
+
+# Angular already has its own .gitignore in product-updates-client/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
