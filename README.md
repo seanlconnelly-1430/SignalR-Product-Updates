@@ -396,6 +396,43 @@ Product deleted: 1
 
 ---
 
+## Deployment Options
+
+This application can be deployed in multiple ways:
+
+### 1. Docker Deployment (Recommended for Development)
+See [DOCKER.md](DOCKER.md) for complete containerization guide.
+
+Quick start:
+```bash
+docker-compose up --build
+```
+Access:
+- Client: http://localhost
+- Server: http://localhost:5170
+
+### 2. Azure Container Apps (Production)
+See [AZURE.md](AZURE.md) for complete Azure deployment guide.
+
+Quick deploy:
+```bash
+./deploy-azure.sh
+```
+
+This script will:
+- Create Azure resources (Resource Group, Container Registry, Container Apps Environment)
+- Build and push Docker images to ACR
+- Deploy both containers to Azure Container Apps
+- Configure networking and health checks
+- Provide URLs for both applications
+
+Expected cost: ~$10-30/month depending on usage
+
+### 3. Local Development
+Run server and client locally (see Getting Started section).
+
+---
+
 ## Technologies Used
 
 ### Server
